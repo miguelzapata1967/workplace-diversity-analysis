@@ -1,0 +1,6 @@
+employee_id,salary,yrs_experience,boss_id,hierarchy_status,salary_IQR_review,numeric_review,self_reporting,hierarchy_review
+61554,700000.0,7,,reaches_CEO,True,False,False,False
+93708,500000.0,28,61554,reaches_CEO,True,False,False,False
+51535,650000.0,33,61554,reaches_CEO,True,False,False,False
+11277,550000.0,22,61554,reaches_CEO,True,False,False,False
+110464,550000.0,21,61554,reaches_CEO,True,False,False,False

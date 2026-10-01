@@ -1,0 +1,5 @@
+is_manager,sex,employee_count,percentage_within_manager_status
+False,F,3240,35.996000444395065
+False,M,5761,64.00399955560493
+True,F,321,32.132132132132135
+True,M,678,67.86786786786787
