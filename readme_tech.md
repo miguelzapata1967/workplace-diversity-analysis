@@ -78,4 +78,4 @@ ChatGPT/Codex generated the script and this documentation with the user's guidan
 
 For the complete project, including datasets, Python analysis, outputs, and documentation, visit the GitHub repository:
 
-🔗 **GitHub Repository:** [Workplace Diversity Analysis](YOUR_GITHUB_REPOSITORY_URL)
+🔗 🔗 **GitHub Repository:** [Workplace Diversity Analysis](https://github.com/miguelzapata1967/workplace-diversity-analysis)
