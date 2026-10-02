@@ -36,6 +36,33 @@ No rows were removed, no missing manager was imputed, and source category labels
 
 All 10,000 reporting paths reach the CEO in the supplied data. There are 999 managers.
 
+## Technical Questions Behind the Analysis
+
+The business-facing questions are simplified in `readme_analysis.md`. The technical questions below preserve the analytical vocabulary, calculations, and validation logic used to support those findings.
+
+1. **Is the reporting hierarchy valid and fully connected to the CEO?**  
+   Validate `employee_id`/`boss_id` relationships, identify self-reporting, missing managers, cycles, alternate roots, and confirm whether each reporting path reaches the CEO. Reporting depth is calculated as the number of manager links between an employee and the CEO.
+
+2. **How does workforce representation vary overall and by department?**  
+   Calculate headcount and sex representation percentages for the full workforce and within departments, using the relevant population as the denominator.
+
+3. **How does representation differ between managers and non-managers?**  
+   Define managers from `boss_id` references, calculate manager-status counts, and compare female/male representation within the management population.
+
+4. **How do reporting depth, direct-report counts, team size, and team composition vary?**  
+   Use reporting paths and `boss_id` relationships to calculate hierarchy depth and direct-report counts, then summarize team-level female/male representation and organizational structure.
+
+5. **What do matched comparable groups show when employees share similar recorded characteristics?**  
+   Match employees on department, degree level, years of experience, and reporting depth. Compare female/male salary summaries within matched groups while retaining small-group flags and denominator information.
+
+6. **How do education and years of experience vary across the workforce?**  
+   Summarize degree-level representation and experience distributions, including experience bands and descriptive statistics. Missing, negative, or nonintegral experience values are flagged rather than silently corrected.
+
+7. **Which records or values require additional review or business clarification?**  
+   Apply salary IQR review flags, numeric validation checks, and hierarchy checks without automatically removing flagged records. Salary values and the `signing_bonus` indicator remain subject to business-context confirmation before stronger conclusions are drawn.
+
+> **Documentation note:** During the final simplification of `readme_analysis.md`, salary and signing-bonus questions were consolidated into the clarification question, and education/experience were combined. This leaves seven business-facing questions even though an earlier draft was described as having eight. This technical section follows the final question structure rather than inventing an additional question.
+
 ## Analysis Methods and Denominators
 
 Representation percentages use total headcount overall, department headcount within departments, or the relevant education/team/manager-status population. Missing grouping categories are retained where supported by the group operation.
@@ -74,8 +101,7 @@ The enriched file contains compensation and employee identifiers. Presentation f
 
 ChatGPT/Codex generated the script and this documentation with the user's guidance. The user ran the workflow and reviewed its outputs. The work is shared as an AI-assisted Academy learning project, with assumptions and limitations disclosed in the analysis README.
 
-## GitHub Repository
+## GitHub Project
 
-For the complete project, including datasets, Python analysis, outputs, and documentation, visit the GitHub repository:
+[View the complete Workplace Diversity Analysis project on GitHub](https://github.com/miguelzapata1967/workplace-diversity-analysis)
 
-🔗 🔗 **GitHub Repository:** [Workplace Diversity Analysis](https://github.com/miguelzapata1967/workplace-diversity-analysis)
